@@ -52,8 +52,8 @@ void Tasks::displayTasks()
  * SAVE TASK
  * Saves a new task to the json
  ***********************************************/
-void Tasks::saveTask(string task, string day)
+void Tasks::saveTask(string task, string date)
 {
-	tasks[task] = day;
+	tasks[task] = date;
 }
 

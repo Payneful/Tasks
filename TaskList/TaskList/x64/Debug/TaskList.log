@@ -1,4 +1,5 @@
 ﻿  Interface.cpp
   Tasks.cpp
+  main.cpp
   Generating Code...
-  TaskList.vcxproj -> C:\Users\Brad\source\repos\TaskList\x64\Debug\TaskList.exe
+LINK : fatal error LNK1168: cannot open C:\Users\Bradley Payne\Documents\GitHub\Tasks\TaskList\x64\Debug\TaskList.exe for writing

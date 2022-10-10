@@ -31,5 +31,5 @@ public:
 	void updateTasks(string file);
 
 	// Saves task to json file
-	void saveTask(string task, string day);
+	void saveTask(string task, string date);
 };
