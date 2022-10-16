@@ -7,6 +7,7 @@ class Interface
 private:
 	int choice;
 	Tasks tasks;
+	Time time;
 
 public:
 	// Constructor
@@ -21,14 +22,14 @@ public:
 	// Simple welcome message based on time of day
 	void welcomeMessage();
 
-	// Returns the part of the day it is
-	std::string getTimeOfDay();
-
 	// Runs the interface program
 	void runInterface();
 
 	// Displays the menu options
 	void displayMenu();
+
+	// Gets the task to be saved
+	string getTaskToSave();
 
 	// Gets the choice from user
 	void getChoice();

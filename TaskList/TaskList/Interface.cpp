@@ -1,6 +1,5 @@
 #include "Interface.h"
 #include <iostream>
-#include <ctime>
 
 using namespace std;
 
@@ -22,24 +21,9 @@ void Interface::reset()
 	choice = 0;
 }
 
-string Interface::getTimeOfDay()
-{
-	time_t curr_time = time(NULL);
-	struct tm struct_time;
-
-	localtime_s(&struct_time, &curr_time);
-
-	int hour = struct_time.tm_hour;
-
-	string timeOfDay = (hour < 12) ? "Good Morning!" :
-							 (hour < 17) ? "Good Afternoon!" : "Good Evening!";
-
-	return timeOfDay;
-}
-
 void Interface::welcomeMessage()
 {
-	string timeOfDay = getTimeOfDay();
+	string timeOfDay = time.getTimeOfDay();
 
 	cout << timeOfDay << endl;
 }
@@ -54,6 +38,7 @@ void Interface::getChoice()
 	reset();
 	while (choice < 1 || choice > 5)
 	{
+		reset();
 		displayMenu();
 		try
 		{
@@ -66,6 +51,17 @@ void Interface::getChoice()
 	}
 }
 
+string Interface::getTaskToSave()
+{
+	string task;
+	cout << "Enter a new task: ";
+	cin.ignore();
+	cin.clear();
+	getline(cin, task);
+
+	return task;
+}
+
 void Interface::runInterface()
 {
 
@@ -76,17 +72,41 @@ void Interface::runInterface()
 		switch (choice)
 		{
 		case 1:
-			tasks.saveTask("apples", "MON");
+		{
+			clear();
+			string task = getTaskToSave();
+			tasks.saveTask(task);
+			clear();
 			break;
+		}
 		case 2:
+		{
+			clear();
+			cout << "Tasks: " << endl;
 			tasks.displayTasks();
+			cout << "\n\n";
 			break;
+		}
 		case 3:
+		{
+			clear();
+			tasks.editTask();
+			clear();
 			break;
+		}
 		case 4:
+		{
+			clear();
+			tasks.clearTask();
+			clear();
 			break;
+		}
 		case 5:
+		{
+			clear();
+			cout << "\n\nSee you soon!\n\n";
 			break;
+		}
 		}
 	}
 }

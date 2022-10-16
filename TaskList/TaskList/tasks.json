@@ -1,4 +1,5 @@
 {
-   "run": true,
-   "hold":  true
+   "task0": "do the laundry",
+   "task1": "do chores",
+   "task2": "do the dishes"
 }

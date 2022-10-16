@@ -2,6 +2,7 @@
 
 #include <string>
 #include "json.h"
+#include "Time.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -15,6 +16,8 @@ class Tasks
 {
 private:
 	json tasks;
+	string filename;
+	Time time;
 
 public:
 	// Constructors
@@ -31,5 +34,14 @@ public:
 	void updateTasks(string file);
 
 	// Saves task to json file
-	void saveTask(string task, string day);
+	void saveTask(string task);
+
+	// Edits a task
+	void editTask();
+
+	// Clears a task
+	void clearTask();
+
+	// Sets values to be in order
+	void resetValues();
 };
