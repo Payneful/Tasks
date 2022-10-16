@@ -1,2 +1,5 @@
-﻿  Tasks.cpp
+﻿  Interface.cpp
+  Tasks.cpp
+  main.cpp
+  Generating Code...
   TaskList.vcxproj -> C:\Users\Brad\Documents\GitHub\Tasks\TaskList\x64\Debug\TaskList.exe
